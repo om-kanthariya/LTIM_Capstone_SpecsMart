@@ -1,0 +1,24 @@
+<app-dashboard></app-dashboard>
+
+<div> 
+    <table class="table">
+        <h1>Orders</h1>
+        <tr>
+            <th scope="col">S.NO</th>
+            <th scope="col">CUSTOMER NAME</th>
+            <th scope="col">SPECS NAME</th>
+            <th scope="col">ADDRESS</th>
+            <th scope="col">QUANTITY</th>
+            <th scope="col">TOTAL PRICE</th>
+        </tr>
+        <tr *ngFor="let item of order;index as i">
+            <td>{{i+1}}</td>
+            <td>{{item.customer.customerName}}</td>
+            <td>{{item.specs}}</td>
+            <td>{{item.customer.address}}</td>
+            <td>{{item.quantity}}</td>
+            <td>{{item.orderPrice}}</td>
+        </tr>
+    </table>
+</div>
+

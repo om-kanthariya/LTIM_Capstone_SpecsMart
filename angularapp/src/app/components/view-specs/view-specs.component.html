@@ -1,0 +1,56 @@
+<app-dashboard></app-dashboard>
+<!-- <div class="row row-cols-2 row-cols-md-3 g-3" align="center">
+  <div *ngFor="let item of specs">
+    <div class="card mx-auto" style="width: 18rem; height: auto;">
+      <div class="card-body">
+        <img src={{item.imageUrl}} class="card-img-top" alt="...">
+        <h5 class="card-title">Name: {{item.name}}</h5>
+        <h5 class="card-title">Category: {{item.category}}</h5>
+        <p class="card-description">Description: {{item.description}}</p>
+        <p class="card-price">Price: Rs.{{item.price}}</p>
+        <p class="card-quantity">Quantity: {{item.quantity}}</p>
+        <a (click)="editSpecList(item)" class="btn btn-primary">Edit</a>&nbsp;&nbsp;
+        <a (click)="deleteSpecList(item.specsId)" class="btn btn-primary">Delete</a>
+      </div>
+    </div>
+  </div>&nbsp;&nbsp;&nbsp;
+</div> -->
+
+<section style="background: linear-gradient(to right, #ccffff 0%, #ffccff 100%);">
+
+  <div class="container py-5">
+    <div class="row">
+      <div class="col-md-12 col-lg-4 mb-4" *ngFor="let item of specs">
+        <div class="card">
+
+          <div class="d-flex justify-content-between p-3">
+            <p class="lead mb-0">Category: {{item.category}}</p>
+          </div>
+          <img src={{item.imageUrl}} class="card-img-top" alt="...">
+          <div class="card-body">
+            <div class="d-flex justify-content-between">
+              <p class="card-quantity">Quantity: {{item.quantity}}</p>
+            </div>
+            <div class="d-flex justify-content-between mb-3">
+              <b>
+                <h7 class="mb-0">Name: {{item.name}}</h7>
+              </b>
+              <h7 class="text-dark mb-0">Price: Rs.{{item.price}}</h7>
+
+            </div>
+            <p class="card-description">Description: {{item.description}}</p>
+
+
+            <a style="color: white;" (click)="editSpecList(item)" class="btn btn-primary">Edit</a>&nbsp;&nbsp;
+            <a style="color: white;" (click)="deleteSpecList(item.specsId)" class="btn btn-primary">Delete</a>
+
+          </div>
+        </div>
+      </div>
+
+
+
+    </div>
+  </div>
+
+</section>

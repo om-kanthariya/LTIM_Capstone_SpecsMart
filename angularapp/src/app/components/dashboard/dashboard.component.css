@@ -1,0 +1,40 @@
+.container{
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-image: url("https://img.freepik.com/free-vector/blue-pink-halftone-background_53876-99004.jpg");
+    border-radius: 10%;
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:cover;
+    margin-top: 100px;
+    background-blend-mode: lighten;
+    margin-right: auto;
+    margin-left: auto;  
+    
+  }
+  .welcome{
+    color: rgb(66, 135, 245);
+    background-position: center;
+    font-weight: 800;
+  }
+ .specsImg{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  height: 50%;
+ }
+
+ .fixed{
+  overflow: hidden;  
+
+ }
+
+
+ 

@@ -1,0 +1,49 @@
+<app-customerdashboard></app-customerdashboard>
+<div *ngIf="customerForm">
+    <section class="vh-100">
+      <div class="container-fluid h-custom">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+  
+            <p class="h1 fw-bold text-center">Fill Your Details</p>
+  
+            <form (ngSubmit)="registerCustomer()" class="mx-1 mx-md-3" [formGroup]="customerDashBoardForm">
+  
+              <!--Name input -->
+              <div data-mdb-input-init class="form-outline mb-3">
+                <label for="name" class="col-xs-6 form-group" for="form3Example3">Name: </label>
+                <input type="text" id="customerName" class="form-control" placeholder="Enter Name"
+                  formControlName="customerName" required />
+              </div>
+  
+              <div
+                *ngIf="customerDashBoardForm.get('customerName').invalid && customerDashBoardForm.get('customerName').touched">
+                <span style="color:red">Name is required</span>
+              </div>
+  
+              <div *ngIf="customerDashBoardForm.get('customerName').hasError('minlength')">
+                <span style="color: red;">Should have minimum of 4 characters</span>
+              </div>
+  
+              <!--Address input -->
+              <div data-mdb-input-init class="form-outline mb-3">
+                <label for="address" class="form-label" for="form3Example3">Address: </label>
+                <textarea id="address" class="form-control" placeholder="Enter Address" formControlName="address"
+                  required></textarea>
+              </div>
+              <div *ngIf="customerDashBoardForm.get('address').invalid && customerDashBoardForm.get('address').touched">
+                <span style="color:red;">Address is required</span>
+              </div>
+  
+              <!--Button-->
+              <div class="text-center text-lg-start mt-4 pt-2">
+                <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary"
+                  style="padding-left: 2.5rem; padding-right: 2.5rem;">Submit</button>
+              </div>
+  
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>

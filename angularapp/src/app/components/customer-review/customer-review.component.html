@@ -1,0 +1,24 @@
+<app-customerdashboard></app-customerdashboard>
+
+<div>
+    <table class="table">
+        <h2>View Reviews</h2>
+        <tr>
+            <th scope="col">S.NO</th>
+            <th scope="col">CUSTOMER NAME</th>
+            <th scope="col">SPECS NAME</th>
+            <th scope="col">FEEDBACK COMMENTS</th>
+            <th scope="col">RATING</th>
+            <th scope="col">DATE CREATED</th>
+        </tr>
+        <tr *ngFor="let item of reviews;index as i">
+            <td>{{i+1}}</td>
+            <td>{{item.customer.customerName}}</td>
+            <td>{{item.subject}}</td>
+            <td>{{item.body}}</td>
+            <td>{{item.rating}}</td>
+            <td>{{item.dateCreated | date :'MM/dd/yyyy'}}</td>
+        </tr>
+    </table>
+</div>
+

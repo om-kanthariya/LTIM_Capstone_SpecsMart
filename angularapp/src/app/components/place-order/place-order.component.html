@@ -1,0 +1,48 @@
+<app-customerdashboard></app-customerdashboard>  
+<section class="vh-100">
+    <div class="container-fluid h-custom">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div *ngIf="placeOrder" class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+
+            <p class="h1 fw-bold text-center">Confirm Order</p>
+          
+            <form (ngSubmit)="payment()" class="mx-1 mx-md-3" [formGroup]="placeOrderForm">
+  
+            <!--Name input -->
+            <div data-mdb-input-init class="form-outline mb-3">
+            <label for="customerName" class="col-xs-6 form-group" for="form3Example3">Name: </label>
+              <input type="text" disabled name="customerName" class="form-control" placeholder="Enter Name" [value]="placeOrder.customerName" formControlName="customerName" required/>
+            </div>
+
+            <div *ngIf="placeOrderForm.get('customerName').invalid && placeOrderForm.get('customerName').touched">
+              <span style="color:red">Name is required.</span>
+            </div>
+
+            <div *ngIf="placeOrderForm.get('customerName').hasError('minlength')">
+              <span style="color: red;">Should have minimum of 4 characters</span>
+            </div>
+
+            <!--Address input -->
+            <div data-mdb-input-init class="form-outline mb-3">
+            <label for="address" class="form-label" for="form3Example3">Address: </label>
+                <textarea name="address" class="form-control" placeholder="Enter Address" [value]="placeOrder.address" formControlName="address" required></textarea>
+            </div>
+            <div *ngIf="placeOrderForm.get('address').invalid && placeOrderForm.get('address').touched">
+                <span style="color:red;">Address is required</span>
+            </div>
+
+            <!--Price input -->
+            <div data-mdb-input-init class="form-outline mb-3">
+            <label for="price" class="form-label"  for="form3Example3">Total Price: </label>
+                <label for="totalPrice" id="price" class="form-control">{{totalPrice}}</label>
+            </div>
+
+            <!--Button-->
+            <div class="container mt-5">
+              <button type="submit" class="btn btn-primary">Make Payment</button>
+             </div>
+             </form><br>
+
+            <div *ngIf="showAlert" class="alert alert-success alert-dismissible fade show" role="alert" >
+            <strong>Success</strong><br>Payment was successful!
+          </div>

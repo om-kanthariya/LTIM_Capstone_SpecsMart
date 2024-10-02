@@ -1,0 +1,97 @@
+
+<section class="vh-100">
+  <div class="container-fluid h-custom">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-md-9 col-lg-6 col-xl-5">
+        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp" class="img-fluid"
+          alt="Sample image">
+      </div>
+      <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+
+        <form (ngSubmit)="register()" [formGroup]="registerForm" class="mx-1 mx-md-4">
+          <p class="h2 fw-bold mb-3 mt-4">Register</p>
+
+          <div data-mdb-input-init class="form-outline m3-4 mt-4">
+            <label for="username" class="form-label">Username: </label>
+            <input type="text" formControlName="username"  name="username" class="form-control" placeholder="Enter username" required />
+            <div *ngIf="registerForm.get('username').hasError('required') && registerForm.get('username').touched">
+              <span style="color: red;">Username is required</span>
+            </div>
+              <div *ngIf="registerForm.get('username').hasError('minlength')">
+                <span style="color: red;">Username must be of minimum 6 characters </span>
+              </div>
+              <div *ngIf="registerForm.get('username').hasError('maxlength')">
+                <span style="color: red;">Username must be of maximum 15 characters </span>
+              </div>
+          </div>
+
+          <div data-mdb-input-init class="form-outline mb-2">
+            <label for="email" class="form-label">Email: </label>
+            <input type="email" formControlName="email" class="form-control" name="email" placeholder="Enter a email address" />
+            <div *ngIf="registerForm.get('email').hasError('required') && registerForm.get('email').touched">
+              <span style="color: red;">Email is required</span>
+            </div>
+            <div *ngIf="registerForm.get('email').hasError('email')">
+              <span style="color: red;">Email should be valid</span>
+            </div>
+          </div>
+
+          <!-- Password input -->
+          <div data-mdb-input-init class="form-outline mb-2">
+            <label for="password" class="form-label">Password: </label>
+            <input type="password" formControlName="password" name="password" class="form-control" placeholder="Enter password" />
+            <div *ngIf="registerForm.get('password').hasError('required') && registerForm.get('password').touched">
+              <span style="color:red">Password is required.</span>
+            </div>
+            <div *ngIf="registerForm.get('password').hasError('pattern')">
+              <span style="color:red">Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters.</span>
+            </div>
+          </div>
+
+
+          <!-- Password input -->
+          <div data-mdb-input-init class="form-outline mb-2">
+            <label for="confirmPassword" class="form-label">Confirm Password: </label>
+            <input type="password" formControlName="confirmPassword" name="confirmPassword" class="form-control"
+              placeholder="Enter confirm password"/>
+              <div *ngIf="registerForm.get('confirmPassword').hasError('required') && registerForm.get('confirmPassword').touched">
+                <span style="color:red">Confirm password is required.</span>
+              </div>
+              <div *ngIf="registerForm.get('password').value !== registerForm.get('confirmPassword').value">
+                <span style="color: red;">Password do not match</span>
+              </div>
+          </div>
+          <div class="d-flex justify-content-between align-items-center">
+          </div>
+
+          <div data-mdb-input-init class="form-outline mb-2">
+            <label for="mobileNumber" class="form-label">Mobile Number: </label>
+            <input type="number" formControlName="mobileNumber" class="form-control"
+              placeholder="Enter mobile number" />
+              <div *ngIf="registerForm.get('mobileNumber').hasError('required') && registerForm.get('mobileNumber').touched">
+                <span style="color: red;">Mobile number is required</span>
+              </div>
+              <div *ngIf="registerForm.get('mobileNumber').hasError('pattern')">
+                <span style="color: red;">Mobile number should be of 10 digits</span>
+              </div>
+          </div>
+          <div class="d-flex justify-content-between align-items-center">
+          </div>
+
+          <label class="form-label" for="role">Select role</label>
+          <select value="Select role" class="form-control" formControlName="role">
+            <option value="" disabled>Select a role</option>
+            <option value="CUSTOMER">CUSTOMER</option>
+            <option value="ADMIN">ADMIN</option>
+          </select>
+
+          <div class="text-center text-lg-start mt-4 pt-2">
+            <button type="submit" [disabled]="registerForm.invalid" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-md"
+              style="padding-left: 2.5rem; padding-right: 2.5rem;">Register</button>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

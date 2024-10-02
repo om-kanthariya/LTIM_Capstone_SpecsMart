@@ -1,0 +1,99 @@
+<app-dashboard></app-dashboard>
+<section class="vh-100">
+    <div class="container-fluid h-custom">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+
+            <p class="h1 fw-bold text-center">Edit Specs</p>
+          <div *ngIf="selectSpecs">
+
+            <form (ngSubmit)="updateSpecs()" class="mx-1 mx-md-3" [formGroup]="editSpecsForm">
+              
+            <!--Name input -->
+            <div data-mdb-input-init class="form-outline mb-3">
+              <label for="name" class="col-xs-6 form-group" for="form3Example3">Name: </label>
+              <input type="text" id="name" class="form-control" placeholder="Enter product name" [(ngModel)]="selectSpecs.name" formControlName="name" required/>
+            </div>
+
+            <div *ngIf="editSpecsForm.get('name').invalid && editSpecsForm.get('name').touched">
+              <span style="color:red">Name is required.</span>
+            </div>
+
+            <div *ngIf="editSpecsForm.get('name').hasError('minlength')">
+              <span style="color: red;">Should have minimum of 4 characters</span>
+            </div>
+            
+            <!-- Category input -->
+            <div data-mdb-input-init class="form-outline mb-3">
+            <label class="form-label" for="category">Select Category</label>
+            <select value="Select Category" id="category" class="form-control" [(ngModel)]="selectSpecs.category" formControlName="category" required>
+              <option value="Sun Glasses">Sun Glasses</option>
+              <option value="Computer Glasses">Computer Glasses</option>
+              <option value="Sport Glasses">Sport Glasses</option>
+              <option value="Eyeglasses">Eyeglasses</option>
+            </select>
+          </div>
+          
+            <!--Price input -->
+            <div data-mdb-input-init class="form-outline mb-3">
+              <label for="price" class="form-label" for="form3Example3">Price: </label>
+                <input type="number" id="price" class="form-control" placeholder="Enter product price" [(ngModel)]="selectSpecs.price" formControlName="price" required/>
+            </div>
+    
+            <div *ngIf="editSpecsForm.get('price').invalid && editSpecsForm.get('price').touched">
+                <span style="color:red">Price is required.</span>
+            </div>
+
+            <div *ngIf="editSpecsForm.get('price').hasError('min')">
+              <span style="color: red;">Should have minimum price greater than 600</span>
+            </div>
+            
+            <!--Description input -->
+            <div data-mdb-input-init class="form-outline mb-3">
+              <label for="description" class="form-label" for="form3Example3">Description: </label>
+              <input type="text" id="description" class="form-control" placeholder="Enter product description" [(ngModel)]="selectSpecs.description" formControlName="description" required/>
+            </div>
+            
+            <div *ngIf="editSpecsForm.get('description').invalid && editSpecsForm.get('description').touched">
+              <span style="color:red">Description is required.</span>
+            </div>
+            
+            <div *ngIf="editSpecsForm.get('description').hasError('minlength')">
+              <span style="color: red;">Should have minimum description of 50 words.</span>
+            </div>
+            
+            <!--Image URL input -->
+            <div data-mdb-input-init class="form-outline mb-3">
+                <label for="imageUrl" class="form-label" for="form3Example3">Image URL: </label>
+                <input type="text" id="imageUrl" class="form-control" placeholder="Enter product URL" [(ngModel)]="selectSpecs.imageUrl" formControlName="imageUrl" required/>
+            </div>
+        
+            <div *ngIf="editSpecsForm.get('imageUrl').invalid && editSpecsForm.get('imageUrl').touched">
+              <span style="color:red">Product URL is required.</span>
+            </div>
+            
+            <!--Quantity input -->
+            <div data-mdb-input-init class="form-outline mb-3">
+              <label for="quantity" class="form-label" for="form3Example3">Quantity: </label>
+              <input type="number" id="quantity" name="quantity" class="form-control" placeholder="Enter product quantity" [(ngModel)]="selectSpecs.quantity" formControlName="quantity" required/>
+            </div>
+            
+            <div *ngIf="editSpecsForm.get('quantity').invalid && editSpecsForm.get('quantity').touched">
+              <span style="color:red">Quantity is required.</span>
+            </div>
+            
+            <!--Button-->
+            <div class="text-center text-lg-start mt-4 pt-2">
+              <button  type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary"
+              style="padding-left: 2.5rem; padding-right: 2.5rem;">Update Specs</button>&nbsp;&nbsp;&nbsp;
+              <button  type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary"
+              style="padding-left: 2.5rem; padding-right: 2.5rem;">Cancel</button>
+            </div>
+            
+            
+          </form>
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>

@@ -1,0 +1,13 @@
+section {
+    width: 100%;
+    padding: 0 7%;
+    display: table;
+    margin-bottom: 20px;
+    max-width: none;
+    height: 100vh;
+
+    /*added here*/
+    background-image:url("../../../assets/add-specs.png");
+     /*added here*/ }
+
+     

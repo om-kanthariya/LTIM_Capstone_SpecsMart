@@ -1,0 +1,98 @@
+<app-dashboard></app-dashboard>
+<section class="vh-100">  
+    <div class="container-fluid h-custom">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+ 
+            <p class="h1 fw-bold mb-3 mx-1 mx-md-4 mt-4">Add New Specs</p>
+          
+            <form (ngSubmit)="addSpecs()" class="mx-1 mx-md-3" [formGroup]="addSpecsForm">
+  
+            <!--Name input -->
+            <div data-mdb-input-init class="form-outline mb-3">
+            <label for="name" class="col-xs-6 form-group" for="form3Example3">Name: </label>
+              <input type="text" id="name" class="form-control" placeholder="Enter product name" formControlName="name" required/>
+            </div>
+ 
+            <div *ngIf="addSpecsForm.get('name').invalid && addSpecsForm.get('name').touched">
+              <span style="color:red;">Name is required.</span>
+            </div>
+ 
+            <div *ngIf="addSpecsForm.get('name').hasError('minlength')">
+              <span style="color: red;">Should have minimum of 4 characters</span>
+            </div>
+ 
+            <!-- Category input -->
+            <div data-mdb-input-init class="form-outline mb-3">
+            <label class="form-label" for="category">Select Category</label>
+            <select value="Select Category" class="form-control" formControlName="category" required>
+            <option value="Sun Glasses">Sun Glasses</option>
+            <option value="Computer Glasses">Computer Glasses</option>
+            <option value="Sport Glasses">Sport Glasses</option>
+            <option value="Eyeglasses">Eyeglasses</option>
+            </select>
+            </div>
+ 
+            <!--Price input -->
+            <div data-mdb-input-init class="form-outline mb-3">
+            <label for="price" class="form-label" for="form3Example3">Price: </label>
+                <input type="number" id="price" class="form-control" placeholder="Enter product price"  formControlName="price" required/>
+            </div>
+            <div *ngIf="addSpecsForm.get('price').invalid && addSpecsForm.get('price').touched">
+                <span style="color:red;">Price is required</span>
+            </div>
+            <div *ngIf="addSpecsForm.get('price').hasError('min')">
+              <span style="color: red;">Should have minimum price greater than 600</span>
+            </div>
+           
+            <!--Description input -->
+            <div data-mdb-input-init class="form-outline mb-3">
+            <label for="description" class="form-label" for="form3Example3">Description: </label>
+                <input type="text" id="description" class="form-control" placeholder="Enter product description"  formControlName="description" required/>
+            </div>
+   
+            <div *ngIf="addSpecsForm.get('description').invalid && addSpecsForm.get('description').touched">
+                <span style="color:red;">Description is required.</span>
+            </div>
+ 
+            <div *ngIf="addSpecsForm.get('description').hasError('minlength')">
+              <span style="color: red;">Should have minimum description of 50 words.</span>
+            </div>
+ 
+            <!--Image URL input -->
+            <div data-mdb-input-init class="form-outline mb-3">
+                <label for="imageUrl" class="form-label" for="form3Example3">Image URL: </label>
+                <input type="text" id="imageUrl" class="form-control" placeholder="Enter product URL"  formControlName="imageUrl" required/>
+            </div>
+       
+            <div *ngIf="addSpecsForm.get('imageUrl').invalid && addSpecsForm.get('imageUrl').touched">
+                <span style="color:red;">Product URL is required.</span>
+            </div>
+ 
+            <!--Quantity input -->
+            <div data-mdb-input-init class="form-outline mb-3">
+            <label for="quantity" class="form-label" for="form3Example3">Quantity: </label>
+                <input type="number" id="quantity" class="form-control" placeholder="Enter product quantity"  formControlName="quantity" required/>
+            </div>
+            <div *ngIf="addSpecsForm.get('quantity').invalid && addSpecsForm.get('quantity').touched">
+              <span style="color:red;">Quantity is required</span>
+            </div>
+            <div *ngIf="addSpecsForm.get('quantity').hasError('min')">
+              <span style="color: red;">Should have minimum quantity greater than 1</span>
+            </div>
+           
+            <!-- Button -->
+            <div class="text-center text-lg-start mt-4 pt-2">
+              <button [disabled]="!addSpecsForm.valid" type="submit" class="btn btn-primary">Add Specs</button>
+            </div>
+            </form>
+            <br>
+ 
+            <div *ngIf="showAlert" class="alert alert-success alert-dismissible fade show" role="alert" >
+              <strong>Success</strong><br>Specs added!
+            </div>
+
+        </div>
+    </div>
+  </div>
+</section>

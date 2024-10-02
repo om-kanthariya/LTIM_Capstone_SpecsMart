@@ -1,0 +1,43 @@
+<div *ngIf="isCustomerRole">
+  <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+    <a routerLink="/" style="cursor: pointer;" class="navbar-brand text-primary">SpecsMart</a>
+    <form class="form-inline">
+      <a routerLink="/customer/home" style="cursor: pointer;"><button class="btn btn-outline-primary my-2 my-sm-0"
+          type="submit">Home</button>&nbsp;&nbsp;&nbsp;&nbsp;</a>
+
+      <a routerLink="/customer/view-specs"><button class="btn btn-outline-primary my-2 my-sm-0" type="submit">View
+          Specs</button>&nbsp;&nbsp;&nbsp;&nbsp;</a>
+      <a routerLink="/customer/my-cart"><button class="btn btn-outline-primary my-2 my-sm-0" type="submit">View
+          My Cart</button>&nbsp;&nbsp;&nbsp;&nbsp;</a>
+      <a routerLink="/customer/my-orders"><button class="btn btn-outline-primary my-2 my-sm-0" type="submit">View
+          My Orders</button>&nbsp;&nbsp;&nbsp;&nbsp;</a>
+      <a routerLink="/customer/view-review"><button class="btn btn-outline-primary my-2 my-sm-0" type="submit">View
+          Reviews</button>&nbsp;&nbsp;&nbsp;&nbsp;</a>
+      <a routerLink="/"><button class="btn btn-outline-primary my-2 my-sm-0" type="submit"
+          (click)="logout()">Logout</button>&nbsp;&nbsp;&nbsp;&nbsp;</a>
+    </form>
+  </nav>
+</div>
+
+
+
+
+
+<!-- <div id="captioned-gallery">
+  <figure class="slider">
+    
+    <figure>
+      <img src="../../../assets/c1.png" class="imgsrc" style="width: 70; height: 70;"/>
+    </figure>
+    
+    <figure>
+      <img src="../../../assets/c2.png" class="imgsrc"/>
+    </figure>
+    
+    <figure>
+      <img src="../../../assets/c3.png" class="imgsrc"/>
+    </figure>
+    
+  </figure>
+</div> -->
+

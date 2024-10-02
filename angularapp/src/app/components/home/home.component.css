@@ -1,0 +1,83 @@
+
+  .welcome{
+    color: rgb(66, 135, 245);
+    background-position: center;
+    font-weight: 800;
+  }
+ .specsImg{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  height: 50%;
+ }
+
+ .fixed{
+  overflow: hidden;  
+
+ }
+ @keyframes slidy {
+  20% { left: 0%; }
+  25% { left: -100%; }
+  45% { left: -100%; }
+  50% { left: -200%; }
+  }
+  
+  body { margin: 0; } 
+  div#slider { 
+  margin: auto;
+  width: 80%;
+  max-width: 900px;
+  border: solid 4px white;
+  overflow: hidden; }
+  
+  div#slider figure { 
+  position: relative;
+  width: 500%;
+  margin: 0;
+  left: 0;
+  font-size: 0;
+  animation: 30s slidy infinite; }
+  
+  div#captioned-gallery { width: 100%; overflow: hidden; }
+  
+  figure { margin: 0; }
+  
+  figure.slider {
+  position: relative; width: 500%;
+  font-size: 0; animation: 15s slidy infinite; }
+  
+  figure.slider figure { 
+  width: 20%; height: auto;
+  display: inline-block;
+  position: inherit; }
+
+  
+  /* figure.slider figure figcaption {
+  position: absolute; bottom: -3.5rem;
+  background: rgba(0,0,0,0.3);
+  color: #fff; width: 100%;
+  font-size: 2rem; padding: .6rem;
+  transition: .5s bottom; } */
+  
+  figure.slider figure:hover figcaption { bottom: 0; }
+
+  .imgsrc{
+    width: 100%;
+    height: 100%;
+  }
+
+  .card1 {
+    transition: transform .2s;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+  }
+
+  .card1:hover {
+    -ms-transform: scale(5); /* IE 9 */
+    -webkit-transform: scale(5); /* Safari 3-8 */
+    transform: scale(1.1); 
+  }
+
+  

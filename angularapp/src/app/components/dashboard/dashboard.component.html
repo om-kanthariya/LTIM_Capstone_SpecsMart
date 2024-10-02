@@ -1,0 +1,21 @@
+<div *ngIf="isAdminRole">
+        <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+            <a routerLink="/" style="cursor: pointer;" class="navbar-brand text-primary">SpecsMart</a>
+            <form class="form-inline">
+                <a routerLink="/admin/home" style="cursor: pointer;"><button
+                        class="btn btn-outline-primary my-2 my-sm-0" type="submit">Home</button>&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                <a routerLink="/admin/dashboard/view-specs"><button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Specs
+                        List</button>&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                <a routerLink="/admin/dashboard/add-specs"><button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Add
+                        Specs</button>&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                <a routerLink="/admin/dashboard/vieworder"><button class="btn btn-outline-primary my-2 my-sm-0" type="submit">View
+                        Orders</button>&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                <a routerLink="/admin/dashboard/viewreview"><button class="btn btn-outline-primary my-2 my-sm-0" type="submit">View
+                        Review</button>&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                <a routerLink="/"><button class="btn btn-outline-primary my-2 my-sm-0"
+                        type="submit" (click)="logout()">Logout</button>&nbsp;&nbsp;&nbsp;&nbsp;</a>
+            </form>
+        </nav>
+    </div>
+    
+    
